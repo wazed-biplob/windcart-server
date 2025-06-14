@@ -8,7 +8,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
   const result = await AuthServices.createUser(userData);
   res.json({
     success: true,
-    message: "User created successfully",
+    message: "User has been created successfully",
     data: result,
   });
 });
