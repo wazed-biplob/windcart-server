@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { AuthServices } from "./AuthServices";
-import { IUser } from "./User/UserInterface";
+import { IUser } from "../User/UserInterface";
 import { catchAsync } from "../../utils/catchAsync";
 
 const createUser = catchAsync(async (req: Request, res: Response) => {

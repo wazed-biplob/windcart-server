@@ -1,6 +1,6 @@
 import config from "../../config/config";
-import { IUser } from "./User/UserInterface";
-import { User } from "./User/UserModel";
+import { IUser } from "../User/UserInterface";
+import { User } from "../User/UserModel";
 import bcrypt from "bcrypt";
 const createUser = async (userData: IUser) => {
   const user = await User.userExistByEmail(userData.email);
