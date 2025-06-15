@@ -3,6 +3,7 @@ import cors from "cors";
 import { router } from "./app/router/routes";
 import mongoose from "mongoose";
 import config from "./app/config/config";
+import { errorHandler } from "./app/middlewares/globalErrorHandler";
 
 const port = 5000;
 
@@ -21,13 +22,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 app.use("/api/v1", router);
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).json({
-    success: false,
-    message: err?.message,
-    error: err,
-  });
-});
+app.use(errorHandler);
 
 // server
 function main() {
